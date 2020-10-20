@@ -1,5 +1,6 @@
-// Environmental Variables
+const express = require('express');
 require('dotenv').config();
+const app = express();
 const { PORT = 4000, NODE_ENV = 'development' } = process.env;
 
 //MONGO CONNECTION
@@ -8,10 +9,6 @@ const mongoose = require('./db/connection');
 //CORS
 const cors = require('cors');
 const corsOptions = require('./configs/cors.js');
-
-//Bringing in Express
-const express = require('express');
-const app = express();
 
 //OTHER IMPORTS
 const morgan = require('morgan');
