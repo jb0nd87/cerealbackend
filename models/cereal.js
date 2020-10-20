@@ -4,7 +4,8 @@ const { Schema, model } = require('mongoose');
 const cerealSchema = new Schema(
 	{
 		name: String,
-		age: Number,
+		brand: String,
+		type: String,
 		img: String,
 	},
 	{ timestamps: true }
