@@ -6,9 +6,9 @@ const router = Router();
 const mongoose = require('mongoose')
 const toId = mongoose.Types.ObjectId
 
-router.get('/seed', async (req, res) => {
-    res.json(await Cereal.insertMany(seedData))
-})
+// router.get('/seed', async (req, res) => {
+//     res.json(await Cereal.insertMany(seedData))
+// })
 
 //index route
 router.get('/', async (req, res) => {
@@ -25,18 +25,18 @@ router.put('/:id', async (req, res) => {
 	res.json(await Cereal.findByIdAndUpdate(req.params.id, req.body, { new: true }));
 });
 
-router.put(':cerealId/addBeverage/:beverageId', async (req, res) => {
-    console.log('put method', req.params)
-    const beverages = await Beverages.findById(req.params.beverageId)
-    const cereal = await Cereal.findByIdAndUpdate(req.params.cerealId, {
-        $push: {beverage: beverage.id},
-        new: true,
-    })
-    res.json({
-        status: 200,
-        data: cereal,
-    })
-})
+// router.put(':cerealId/addBeverage/:beverageId', async (req, res) => {
+//     console.log('put method', req.params)
+//     const beverages = await Beverages.findById(req.params.beverageId)
+//     const cereal = await Cereal.findByIdAndUpdate(req.params.cerealId, {
+//         $push: {beverage: beverage.id},
+//         new: true,
+//     })
+//     res.json({
+//         status: 200,
+//         data: cereal,
+//     })
+// })
 
 //delete route
 router.delete('/:id', async (req, res) => {
