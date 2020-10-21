@@ -7,7 +7,7 @@ const beverageSchema = new Schema(
 		brand: String,
 		type: String,
 		img: String,
-		cereal: [{ ref: 'cereal', type: mongoose.Types.ObjectId }],
+		// cereal: [{ ref: 'cereal', type: mongoose.Types.ObjectId }],
 	},
 	{ timestamps: true }
 );
