@@ -3,7 +3,7 @@ const Cereal = require('../models/cereal');
 const { Router } = require('express');
 // const { findById } = require('../models/cereal')
 const router = Router();
-const mongoose = require('mongoose')
+// const mongoose = require('mongoose')
 // const toId = mongoose.Types.ObjectId
 
 // router.get('/seed', async (req, res) => {
