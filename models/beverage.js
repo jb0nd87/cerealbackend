@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const mongoose = require('../db/connection');
+// const mongoose = require('../db/connection');
 
 const beverageSchema = new Schema(
 	{
