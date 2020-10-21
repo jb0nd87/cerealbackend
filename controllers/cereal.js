@@ -6,21 +6,37 @@ const router = Router();
 const mongoose = require('mongoose')
 const toId = mongoose.Types.ObjectId
 
-//index route cereal
 router.get('/', async (req, res) => {
-	const cereals = await Cereal.find({});
-	res.json({ status: 200, data: cereals });
+    res.json(await CredentialsContainer.insertMany(seedData))
+})
+
+//index route
+router.get('/', async (req, res) => {
+	res.json(await Cereal.find({}));
 });
-//create cereal
+
+//create route
 router.post('/', async (req, res) => {
-	const cereal = await Cereal.create(req.body);
-	res.json({ status: 200, data: cereal });
+	res.json(await Cereal.create(req.body));
 });
 
 //update route
 router.put('/:id', async (req, res) => {
 	res.json(await Cereal.findByIdAndUpdate(req.params.id, req.body, { new: true }));
 });
+
+router.put(':cerealId/addBeverage/:beverageId', async (req, res) => {
+    console.log('put method', req.params)
+    const beverages = await Beverages.findById(req.params.beverageId)
+    const cereal = await Cereal.findByIdAndUpdate(req.params.cerealId, {
+        $push: {beverage: beverage.id},
+        new: true,
+    })
+    res.json({
+        status: 200,
+        data: cereal,
+    })
+})
 
 //delete route
 router.delete('/:id', async (req, res) => {
