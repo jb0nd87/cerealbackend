@@ -1,10 +1,10 @@
 const Cereal = require('../models/cereal');
-const Beverage = require('../models/beverage');
+// const Beverage = require('../models/beverage');
 const { Router } = require('express');
-const { findById } = require('../models/cereal')
+// const { findById } = require('../models/cereal')
 const router = Router();
 const mongoose = require('mongoose')
-const toId = mongoose.Types.ObjectId
+// const toId = mongoose.Types.ObjectId
 
 // router.get('/seed', async (req, res) => {
 //     res.json(await Cereal.insertMany(seedData))
