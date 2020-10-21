@@ -6,8 +6,8 @@ const router = Router();
 const mongoose = require('mongoose')
 const toId = mongoose.Types.ObjectId
 
-router.get('/', async (req, res) => {
-    res.json(await CredentialsContainer.insertMany(seedData))
+router.get('/seed', async (req, res) => {
+    res.json(await Cereal.insertMany(seedData))
 })
 
 //index route
